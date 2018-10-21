@@ -164,7 +164,7 @@
                   android:visibility="gone"/>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="AutoPay Every Month"
+                  android:text="Recurring Monthly"
                   android:id="@+id/kidsklubMonthlyText"
                   android:textColor="#6EB2FB"
                   android:layout_marginTop="16dp"
@@ -299,7 +299,7 @@
                   android:visibility="gone"/>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="AutoPay Every Month"
+                  android:text="Recurring Monthly"
                   android:id="@+id/wushuMonthlyText"
                   android:textColor="#6EB2FB"
                   android:layout_marginTop="16dp"
@@ -433,7 +433,7 @@
                 android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="AutoPay Every Month"
+                  android:text="Recurring Monthly"
                   android:id="@+id/chineseClassMonthlyText"
                   android:textColor="#6EB2FB"
                   android:layout_marginTop="16dp"
