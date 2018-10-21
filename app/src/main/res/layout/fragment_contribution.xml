@@ -55,7 +55,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:textAppearance="@style/TextViewStyle"
-            tools:text="Select Bill" app:layout_constraintHorizontal_bias="0.0"/>
+            tools:text="Select Bill" app:layout_constraintHorizontal_bias="0.5"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/kidsKlubLayout"
@@ -224,7 +224,7 @@
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:id="@+id/wushuTotalText"
-                  android:text="$425"
+                  android:text="$200"
                   android:layout_margin="16dp"
                   app:layout_constraintEnd_toEndOf="parent"
                   app:layout_constraintTop_toTopOf="parent"

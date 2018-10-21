@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#1184ff</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">#3a99ff</item>
+        <item name="colorAccent">#F8E71C</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

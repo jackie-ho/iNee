@@ -152,7 +152,8 @@ class ContributionFragment : Fragment() {
             kidsKlubAmountEditText.setText("2250")
         }
         wushuFullSwitch.setOnClickListener {
-            wushuAmountEditText.setText("425")
+            wushuAmountEditText.setText("200")
+
         }
         chineseClassFullSwitch.setOnClickListener {
             chineseClassAmountEditText.setText("170")

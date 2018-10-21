@@ -25,6 +25,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="54dp"
             android:layout_width="match_parent"
+            app:titleTextColor="#ffffff"
+            app:subtitleTextColor="#ffffff"
             android:layout_height="match_parent">
 
     </FrameLayout>
