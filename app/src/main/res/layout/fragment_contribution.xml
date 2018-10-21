@@ -2,33 +2,591 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        tools:ignore="HardcodedText">
+
+    <TextView
+            android:id="@+id/contributionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="#6EB2FB"
+            android:textSize="20sp"
+            android:text="CONTRIBUTION"
+            android:textAppearance="@style/TextViewStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+            android:id="@+id/totalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:textAppearance="@style/TextViewStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contributionText"
+            android:text="Total Contribution Amount"/>
+
+    <TextView
+            android:id="@+id/totalNumberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:textAppearance="@style/TextViewStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/totalText"
+            app:layout_constraintTop_toBottomOf="@id/contributionText"
+            tools:text="$1900" app:layout_constraintHorizontal_bias="1.0"/>
 
     <TextView
             android:id="@+id/selectBillText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalNumberText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-    tools:text="Select Bill"/>
+            android:text="Select Bill (single or multiple)"
+            android:textSize="12sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextViewStyle"
+            tools:text="Select Bill" app:layout_constraintHorizontal_bias="0.0"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contributionRecyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/kidsKlubLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/selectBillText"
+            android:animateLayoutChanges="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/selectBillText">
 
-    <Button
-            android:id="@+id/submitButton"
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="KIDS KLUB (monthly)"
+                  android:id="@+id/kidsklubText"
+                  android:layout_margin="16dp"
+                  android:textColor="#6EB2FB"
+                  android:textStyle="bold"
+                  android:textAppearance="@style/TextViewStyle"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  tools:layout_editor_absoluteX="0dp"/>
+        <TextView
+                android:id="@+id/kidsKlubViewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="@string/view_bill"
+                android:textColor="#9B9B9B"
+                android:textStyle=""
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/kidsklubText"
+                app:layout_constraintBaseline_toBaselineOf="@+id/kidsklubText"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/kidsKlubTotalText"
+                  android:text="$2250"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginEnd="16dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/kidsKlubViewText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/kidsklubText"
+                  app:layout_constraintHorizontal_bias="1.0"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay in Full"
+                  android:id="@+id/kidsklubFullText"
+                  android:layout_marginTop="16dp"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/kidsklubText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/kidsKlubFullSwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/kidsklubText"
+                app:layout_constraintStart_toEndOf="@id/kidsklubFullText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                android:visibility="gone"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay Amount"
+                  android:id="@+id/kidsklubAmountText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/kidsklubFullText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <TextView
+                android:id="@+id/kidsklubDollarText"
+                android:textColor="#6EB2FB"
+                app:layout_constraintEnd_toStartOf="@id/kidsklubAmountEditText"
+                app:layout_constraintStart_toEndOf="@id/kidsklubAmountText"
+                app:layout_constraintBaseline_toBaselineOf="@id/kidsklubAmountEditText"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:text="$"
+                android:textSize="14sp"
+                android:textAppearance="@style/TextViewStyle"
+                android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <EditText android:layout_width="100dp" android:layout_height="wrap_content"
+                  android:id="@+id/kidsklubAmountEditText"
+                  android:selectAllOnFocus="true"
+                  android:layout_margin="16dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  android:inputType="numberDecimal"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  android:text="0"
+                  app:layout_constraintStart_toEndOf="@id/kidsklubAmountText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/kidsklubAmountText"
+                  app:layout_constraintHorizontal_bias="1.0"
+                  android:visibility="gone"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="AutoPay Every Month"
+                  android:id="@+id/kidsklubMonthlyText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/kidsklubAmountText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/kidsKlubMonthlySwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toEndOf="@id/kidsklubMonthlyText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/kidsklubMonthlyText"
+                android:visibility="gone"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wushuLayout"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/kidsKlubLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:visibility="visible">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/wushuText"
+                  android:text="WUSHU (Autumn)"
+                  android:layout_margin="16dp"
+                  android:textColor="#6EB2FB"
+                  android:textStyle="bold"
+                  android:textAppearance="@style/TextViewStyle"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/wushuViewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:textColor="#9B9B9B"
+                android:text="@string/view_bill"
+                android:textStyle=""
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/wushuText"
+                app:layout_constraintBaseline_toBaselineOf="@+id/wushuText"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/wushuTotalText"
+                  android:text="$425"
+                  android:layout_margin="16dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/wushuViewText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/wushuText"
+                  app:layout_constraintHorizontal_bias="1.0"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay in Full"
+                  android:id="@+id/wushuFullText"
+                  android:layout_marginTop="16dp"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/wushuText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/wushuFullSwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/wushuText"
+                app:layout_constraintStart_toEndOf="@id/wushuFullText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                android:visibility="gone"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay Amount"
+                  android:id="@+id/wushuAmountText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/wushuFullText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+
+        <TextView
+                android:id="@+id/wushuDollarText"
+                android:textColor="#6EB2FB"
+                app:layout_constraintEnd_toStartOf="@id/wushuAmountEditText"
+                app:layout_constraintStart_toEndOf="@id/wushuAmountText"
+                app:layout_constraintBaseline_toBaselineOf="@id/wushuAmountEditText"
+                android:text="$"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:textSize="14sp"
+                android:textAppearance="@style/TextViewStyle"
+                android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <EditText android:layout_width="100dp" android:layout_height="wrap_content"
+                  android:id="@+id/wushuAmountEditText"
+                  android:selectAllOnFocus="true"
+                  android:layout_margin="16dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  android:inputType="numberDecimal"
+                  android:text="0"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/wushuAmountText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/wushuAmountText"
+                  app:layout_constraintHorizontal_bias="1.0"
+                  android:visibility="gone"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="AutoPay Every Month"
+                  android:id="@+id/wushuMonthlyText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/wushuAmountText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/wushuMonthlySwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toEndOf="@id/wushuMonthlyText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/wushuMonthlyText"
+                android:visibility="gone"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chineseClassLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wushuLayout">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/chineseClassText"
+                  android:text="CHINESE CLASS (monthly)"
+                  android:textStyle="bold"
+                  android:layout_margin="16dp"
+                  android:textColor="#6EB2FB"
+                  android:textAppearance="@style/TextViewStyle"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/chineseClassViewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="@string/view_bill"
+                android:textColor="#9B9B9B"
+                android:textStyle=""
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/chineseClassText"
+                app:layout_constraintBaseline_toBaselineOf="@+id/chineseClassText"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/chineseClassTotalText"
+                  android:text="$170"
+                  android:layout_margin="16dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/chineseClassViewText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/chineseClassText"
+                  app:layout_constraintHorizontal_bias="1.0"
+        />
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay in Full"
+                  android:id="@+id/chineseClassFullText"
+                  android:layout_marginTop="16dp"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/chineseClassText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/chineseClassFullSwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/chineseClassText"
+                app:layout_constraintStart_toEndOf="@id/chineseClassFullText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                android:visibility="gone"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay Amount"
+                  android:id="@+id/chineseClassAmountText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/chineseClassFullText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <EditText android:layout_width="100dp" android:layout_height="wrap_content"
+                  android:id="@+id/chineseClassAmountEditText"
+                  android:selectAllOnFocus="true"
+                  android:layout_margin="16dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  android:inputType="numberDecimal"
+                  android:text="0"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/chineseClassAmountText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/chineseClassAmountText"
+                  app:layout_constraintHorizontal_bias="1.0"
+                  android:visibility="gone"/>
+
+
+        <TextView
+                android:id="@+id/chineseClassDollarText"
+                android:textColor="#6EB2FB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintEnd_toStartOf="@id/chineseClassAmountEditText"
+                app:layout_constraintStart_toEndOf="@id/chineseClassAmountText"
+                app:layout_constraintBaseline_toBaselineOf="@id/chineseClassAmountEditText"
+                android:text="$"
+                android:textSize="14sp"
+                android:textAppearance="@style/TextViewStyle"
+                android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="AutoPay Every Month"
+                  android:id="@+id/chineseClassMonthlyText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/chineseClassAmountText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/chineseClassMonthlySwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toEndOf="@id/chineseClassMonthlyText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintBaseline_toBaselineOf="@+id/chineseClassMonthlyText"
+                android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/legolandLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chineseClassLayout">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/legolandText"
+                  android:text="LEGOLAND (monthly)"
+                  android:textStyle="bold"
+                  android:layout_margin="16dp"
+                  android:textColor="#6EB2FB"
+                  android:textAppearance="@style/TextViewStyle"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/legolandViewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="@string/view_bill"
+                android:textColor="#9B9B9B"
+                android:textStyle=""
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/legolandText"
+                app:layout_constraintBaseline_toBaselineOf="@+id/legolandText"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/legolandTotalText"
+                  android:text="$1700"
+                  android:layout_margin="16dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/legolandViewText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/legolandText"
+                  app:layout_constraintHorizontal_bias="1.0"
+        />
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay in Full"
+                  android:id="@+id/legolandFullText"
+                  android:layout_marginTop="16dp"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/legolandText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <Switch
+                android:id="@+id/legolandFullSwitch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/legolandText"
+                app:layout_constraintStart_toEndOf="@id/legolandFullText"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                android:visibility="gone"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Pay Amount"
+                  android:id="@+id/legolandAmountText"
+                  android:textColor="#6EB2FB"
+                  android:layout_marginTop="16dp"
+                  android:layout_marginBottom="16dp"
+                  android:layout_marginStart="32dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/legolandFullText"
+                  tools:layout_editor_absoluteX="0dp"
+                  android:visibility="gone"/>
+
+        <TextView
+                android:id="@+id/legolandsDollarText"
+                android:textColor="#6EB2FB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintEnd_toStartOf="@id/legolandAmountEditText"
+                app:layout_constraintStart_toEndOf="@id/legolandAmountText"
+                app:layout_constraintBaseline_toBaselineOf="@id/legolandAmountEditText"
+                android:text="$"
+                android:textSize="14sp"
+                android:textAppearance="@style/TextViewStyle"
+                android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <EditText android:layout_width="100dp" android:layout_height="wrap_content"
+                  android:id="@+id/legolandAmountEditText"
+                  android:selectAllOnFocus="true"
+                  android:layout_margin="16dp"
+                  android:textAppearance="@style/TextViewStyle"
+                  android:textSize="14sp"
+                  android:inputType="numberDecimal"
+                  android:text="0"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/legolandAmountText"
+                  app:layout_constraintBaseline_toBaselineOf="@+id/legolandAmountText"
+                  app:layout_constraintHorizontal_bias="1.0"
+                  android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+            android:id="@+id/prevText"
+            android:text="Previous"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAppearance="@style/TextViewStyle"
+            android:textColor="#6EB2FB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/nextText"
+            android:text="Next"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAppearance="@style/TextViewStyle"
+            android:textColor="#6EB2FB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

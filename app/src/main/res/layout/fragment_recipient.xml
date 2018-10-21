@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/selectText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="#6EB2FB"
+            android:textSize="20sp"
+            android:text="SELECT"
+            android:textAppearance="@style/TextViewStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/recipientText"
+              android:layout_marginStart="16dp"
+              android:layout_marginTop="16dp"
+              app:layout_constraintTop_toBottomOf="@id/selectText"
+              app:layout_constraintStart_toStartOf="parent"
+              android:textSize="14sp"
+              android:text="Select Recipient of the Contribution"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="Magnus Peterson"
+              android:id="@+id/personText"
+              android:layout_marginTop="8dp"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              android:padding="8dp"
+              app:layout_constraintTop_toBottomOf="@id/recipientText"
+              app:layout_constraintStart_toStartOf="parent"
+              android:background="@drawable/bg_border"/>
+
+    <TextView
+            android:id="@+id/nextText"
+            android:text="Next"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAppearance="@style/TextViewStyle"
+            android:textColor="#6EB2FB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:id="@+id/profileImage"
+            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personText"
+            android:layout_width="54dp" android:layout_height="54dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/pettyNameText"
+              android:textSize="14sp"
+              app:layout_constraintStart_toEndOf="@id/profileImage"
+              android:textStyle="bold"
+              android:text="Magnus Peterson" android:layout_marginStart="16dp"
+              app:layout_constraintTop_toTopOf="@+id/profileImage"/>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/mutualFriendsText"
+              android:textSize="14sp"
+              app:layout_constraintStart_toEndOf="@id/profileImage"
+              app:layout_constraintTop_toBottomOf="@id/pettyNameText"
+              android:text="3 Mutual Friends" android:layout_marginStart="16dp" android:layout_marginBottom="8dp"
+              app:layout_constraintBottom_toBottomOf="@+id/profileImage"/>
+
+    <ImageView
+            android:id="@+id/checkmark"
+            android:src="@drawable/ic_check_circle"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:tint="#6EB2FB"
+            android:layout_width="54dp" android:layout_height="54dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personText"
+            app:layout_constraintStart_toEndOf="@+id/mutualFriendsText" android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="1.0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
