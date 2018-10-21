@@ -28,7 +28,7 @@
               android:text="Select Recipient of the Contribution"/>
 
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:text="Magnus Peterson"
+              android:text="Ed Shao"
               android:id="@+id/personText"
               android:layout_marginTop="8dp"
               android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
               android:textSize="14sp"
               app:layout_constraintStart_toEndOf="@id/profileImage"
               android:textStyle="bold"
-              android:text="Magnus Peterson" android:layout_marginStart="16dp"
+              android:text="Ed Shao" android:layout_marginStart="16dp"
               app:layout_constraintTop_toTopOf="@+id/profileImage"/>
 
 

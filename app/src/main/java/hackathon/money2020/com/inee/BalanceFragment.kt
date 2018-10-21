@@ -156,18 +156,18 @@ class BalanceFragment : Fragment() {
 
         val rewardList = mutableListOf<Chart>()
         with(rewardList) {
-            add(Chart(500, 1700, 270, "Jan 2018"))
-            add(Chart(530, 1870, 287, "Feb 2018"))
-            add(Chart(560, 2057, 306, "Mar 2018"))
-            add(Chart(585, 2263, 326, "Apr 2018"))
-            add(Chart(615, 2489, 349, "May 2018"))
-            add(Chart(640, 2738, 374, "June 2018"))
-            add(Chart(680, 3012, 401, "July 2018"))
-            add(Chart(725, 3313, 431, "Aug 2018"))
-            add(Chart(745, 3644, 464, "Sep 2018"))
-            add(Chart(784, 4009, 501, "Oct 2018"))
-            add(Chart(823, 4409, 541, "Nov 2018"))
-            add(Chart(877, 4850, 585, "Dec 2018"))
+            add(Chart(85, 1840, 660, "Jan 2018"))
+            add(Chart(170, 1840, 620, "Feb 2018"))
+            add(Chart(255, 1840, 500, "Mar 2018"))
+            add(Chart(340, 1840, 722, "Apr 2018"))
+            add(Chart(422, 1840, 330, "May 2018"))
+            add(Chart(511, 1840, 450, "June 2018"))
+            add(Chart(596, 1840, 500, "July 2018"))
+            add(Chart(681, 1840, 340, "Aug 2018"))
+            add(Chart(766, 1840, 400, "Sep 2018"))
+            add(Chart(852, 1840, 550, "Oct 2018"))
+            add(Chart(890, 1840, 440, "Nov 2018"))
+            add(Chart(911, 1840, 670, "Dec 2018"))
         }
 
         return rewardList
